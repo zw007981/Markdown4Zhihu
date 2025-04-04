@@ -3,23 +3,24 @@
 # Usage: This program aims to transfer your markdown file into a way zhihu.com can recognize correctly.
 #        It will mainly deal with your local images and the formulas inside.
 
-import os, re
 import argparse
-import subprocess
-import chardet
 import functools
+import os
 import os.path as op
-
-from PIL import Image
-from pathlib2 import Path
+import re
+import subprocess
 from shutil import copyfile
+
+import chardet
+from pathlib2 import Path
+from PIL import Image
 
 ###############################################################################################################
 ## Please change the GITHUB_REPO_PREFIX value according to your own GitHub user name and relative directory. ##
 ###############################################################################################################
 # GITHUB_REPO_PREFIX = Path("https://raw.githubusercontent.com/`YourUserName`/`YourRepoName`/master/Data/")
 # Your image folder remote link
-GITHUB_REPO_PREFIX = "https://raw.githubusercontent.com/miracleyoo/Markdown4Zhihu/master/Data/"
+GITHUB_REPO_PREFIX = "https://raw.githubusercontent.com/zw007981/Markdown4Zhihu/master/Data/"
 COMPRESS_THRESHOLD = 5e5 # The threshold of compression
 
 # The main function for this program
